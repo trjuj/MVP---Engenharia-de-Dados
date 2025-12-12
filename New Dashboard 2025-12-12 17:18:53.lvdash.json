@@ -1,0 +1,133 @@
+{
+  "datasets": [
+    {
+      "name": "65a903c7",
+      "displayName": "TABELA_FATO",
+      "queryLines": [
+        "SELECT * FROM tabela_fato;"
+      ],
+      "catalog": "mvp-juj",
+      "schema": "mvp-data"
+    },
+    {
+      "name": "40ed4d6d",
+      "displayName": "COMBUSTIVEIS",
+      "queryLines": [
+        "SELECT * FROM combustiveis;"
+      ],
+      "catalog": "mvp-juj",
+      "schema": "mvp-data"
+    }
+  ],
+  "pages": [
+    {
+      "name": "7bff0e51",
+      "displayName": "Untitled page",
+      "layout": [
+        {
+          "widget": {
+            "name": "6590719d",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "65a903c7",
+                  "fields": [
+                    {
+                      "name": "monthly(date)",
+                      "expression": "DATE_TRUNC(\"MONTH\", `date`)"
+                    },
+                    {
+                      "name": "sum(diesel_pct_variation)",
+                      "expression": "SUM(`diesel_pct_variation`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "area",
+              "encodings": {
+                "x": {
+                  "fieldName": "monthly(date)",
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "fieldName": "sum(diesel_pct_variation)",
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 4,
+            "y": 0,
+            "width": 2,
+            "height": 5
+          }
+        },
+        {
+          "widget": {
+            "name": "83f9620b",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "65a903c7",
+                  "fields": [
+                    {
+                      "name": "monthly(date)",
+                      "expression": "DATE_TRUNC(\"MONTH\", `date`)"
+                    },
+                    {
+                      "name": "sum(dif_pct_oil_diesel)",
+                      "expression": "SUM(`dif_pct_oil_diesel`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "area",
+              "encodings": {
+                "x": {
+                  "fieldName": "monthly(date)",
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "fieldName": "sum(dif_pct_oil_diesel)",
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 4,
+            "y": 5,
+            "width": 2,
+            "height": 4
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "widgetHeaderAlignment": "ALIGNMENT_UNSPECIFIED"
+    },
+    "applyModeEnabled": false
+  }
+}

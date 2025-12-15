@@ -34,6 +34,4 @@ O Objetivo principal deste MVP, é uma análise da evolução mensal do preço i
 
 10. Há diferença significativa entre as variações de cada região do Brasil?
 
-11. Foi possível identificar algum evento que possa ter afetado diretamente o preço do petróleo ou dos combustíveis?
-
-12. Se sim, quais eventos forma mais frequentes e qual evento causou a maior variação?
+11. Foi possível identificar algum evento que possa ter afetado diretamente o preço do petróleo ou dos combustíveis? Se sim, quais eventos forma mais frequentes e qual evento causou a maior variação?

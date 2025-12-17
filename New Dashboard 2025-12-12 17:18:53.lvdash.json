@@ -26,6 +26,33 @@
       ],
       "catalog": "mvp-juj",
       "schema": "mvp-data"
+    },
+    {
+      "name": "edd4993c",
+      "displayName": "REGIONS",
+      "queryLines": [
+        "SELECT * FROM regions;"
+      ],
+      "catalog": "mvp-juj",
+      "schema": "mvp-data"
+    },
+    {
+      "name": "ebce3331",
+      "displayName": "SOUTH",
+      "queryLines": [
+        "SELECT * FROM south;"
+      ],
+      "catalog": "mvp-juj",
+      "schema": "mvp-data"
+    },
+    {
+      "name": "e8804a2a",
+      "displayName": "SOUTHEAST",
+      "queryLines": [
+        "SELECT * FROM southeast;"
+      ],
+      "catalog": "mvp-juj",
+      "schema": "mvp-data"
     }
   ],
   "pages": [
@@ -61,6 +88,9 @@
               "encodings": {
                 "x": {
                   "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
                   "scale": {
                     "type": "temporal"
                   }
@@ -158,6 +188,9 @@
               "encodings": {
                 "x": {
                   "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
                   "scale": {
                     "type": "temporal"
                   }
@@ -255,12 +288,18 @@
               "encodings": {
                 "x": {
                   "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
                   "scale": {
                     "type": "temporal"
                   }
                 },
                 "y": {
                   "fieldName": "oil_avg_price",
+                  "axis": {
+                    "hideTitle": false
+                  },
                   "displayName": "Preço Médio",
                   "scale": {
                     "type": "quantitative"
@@ -352,6 +391,9 @@
               "encodings": {
                 "x": {
                   "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
                   "scale": {
                     "type": "temporal"
                   }
@@ -461,6 +503,9 @@
               "encodings": {
                 "x": {
                   "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
                   "scale": {
                     "type": "temporal"
                   }
@@ -561,6 +606,9 @@
               "encodings": {
                 "x": {
                   "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
                   "scale": {
                     "type": "temporal"
                   }
@@ -658,6 +706,9 @@
               "encodings": {
                 "x": {
                   "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
                   "scale": {
                     "type": "temporal"
                   }
@@ -755,6 +806,9 @@
               "encodings": {
                 "x": {
                   "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
                   "scale": {
                     "type": "temporal"
                   }
@@ -859,6 +913,9 @@
               "encodings": {
                 "x": {
                   "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
                   "scale": {
                     "type": "temporal"
                   }
@@ -958,6 +1015,9 @@
               "encodings": {
                 "x": {
                   "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
                   "scale": {
                     "type": "temporal"
                   }
@@ -1055,6 +1115,9 @@
               "encodings": {
                 "x": {
                   "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
                   "scale": {
                     "type": "temporal"
                   }
@@ -1118,7 +1181,7 @@
             }
           },
           "position": {
-            "x": 3,
+            "x": 0,
             "y": 6,
             "width": 3,
             "height": 6
@@ -1138,7 +1201,7 @@
             }
           },
           "position": {
-            "x": 0,
+            "x": 3,
             "y": 6,
             "width": 3,
             "height": 3
@@ -1187,6 +1250,9 @@
               "encodings": {
                 "x": {
                   "fieldName": "correlation",
+                  "axis": {
+                    "hideTitle": true
+                  },
                   "scale": {
                     "type": "categorical",
                     "sort": {
@@ -1243,6 +1309,2382 @@
             "y": 0,
             "width": 6,
             "height": 12
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
+      "name": "997c88da",
+      "displayName": "Preço Médio Regional",
+      "layout": [
+        {
+          "widget": {
+            "name": "57042ae7",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "edd4993c",
+                  "fields": [
+                    {
+                      "name": "monthly(date)",
+                      "expression": "DATE_TRUNC(\"MONTH\", `date`)"
+                    },
+                    {
+                      "name": "south_diesel_avg_price",
+                      "expression": "`south_diesel_avg_price`"
+                    },
+                    {
+                      "name": "southeast_diesel_avg_price",
+                      "expression": "`southeast_diesel_avg_price`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "fields": [
+                    {
+                      "fieldName": "south_diesel_avg_price",
+                      "displayName": "Sul"
+                    },
+                    {
+                      "fieldName": "southeast_diesel_avg_price",
+                      "displayName": "Sudeste"
+                    }
+                  ]
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Diesel"
+              },
+              "mark": {
+                "colors": [
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 5
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 6
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 7
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 8
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 10
+                  }
+                ],
+                "layout": "group"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 1,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "86fd6be8",
+            "multilineTextboxSpec": {
+              "lines": [
+                "<span style=\"text-align:center;display:block\"><span style=\"font-size:24px\">Comparação do preço médio de cada combustível em cada região</span></span>"
+              ]
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 6,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "a4c7bb8e",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "edd4993c",
+                  "fields": [
+                    {
+                      "name": "monthly(date)",
+                      "expression": "DATE_TRUNC(\"MONTH\", `date`)"
+                    },
+                    {
+                      "name": "south_ethanol_avg_price",
+                      "expression": "`south_ethanol_avg_price`"
+                    },
+                    {
+                      "name": "southeast_ethanol_avg_price",
+                      "expression": "`southeast_ethanol_avg_price`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "fields": [
+                    {
+                      "fieldName": "south_ethanol_avg_price",
+                      "displayName": "Sul"
+                    },
+                    {
+                      "fieldName": "southeast_ethanol_avg_price",
+                      "displayName": "Sudeste"
+                    }
+                  ]
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Etanol"
+              },
+              "mark": {
+                "colors": [
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 5
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 6
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 7
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 8
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 10
+                  }
+                ],
+                "layout": "group"
+              }
+            }
+          },
+          "position": {
+            "x": 1,
+            "y": 7,
+            "width": 4,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "b1441faa",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "edd4993c",
+                  "fields": [
+                    {
+                      "name": "monthly(date)",
+                      "expression": "DATE_TRUNC(\"MONTH\", `date`)"
+                    },
+                    {
+                      "name": "south_gas_avg_price",
+                      "expression": "`south_gas_avg_price`"
+                    },
+                    {
+                      "name": "southeast_gas_avg_price",
+                      "expression": "`southeast_gas_avg_price`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "fields": [
+                    {
+                      "fieldName": "south_gas_avg_price",
+                      "displayName": "Sul"
+                    },
+                    {
+                      "fieldName": "southeast_gas_avg_price",
+                      "displayName": "Sudeste"
+                    }
+                  ]
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Gasolina"
+              },
+              "mark": {
+                "colors": [
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 5
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 6
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 7
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 8
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 10
+                  }
+                ],
+                "layout": "group"
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 1,
+            "width": 3,
+            "height": 6
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
+      "name": "6e538b45",
+      "displayName": "Variação Regional",
+      "layout": [
+        {
+          "widget": {
+            "name": "9267fa0d",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "edd4993c",
+                  "fields": [
+                    {
+                      "name": "monthly(date)",
+                      "expression": "DATE_TRUNC(\"MONTH\", `date`)"
+                    },
+                    {
+                      "name": "south_diesel_pct_variation",
+                      "expression": "`south_diesel_pct_variation`"
+                    },
+                    {
+                      "name": "southeast_diesel_pct_variation",
+                      "expression": "`southeast_diesel_pct_variation`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "fields": [
+                    {
+                      "fieldName": "south_diesel_pct_variation",
+                      "displayName": "Sul"
+                    },
+                    {
+                      "fieldName": "southeast_diesel_pct_variation",
+                      "displayName": "Sudeste"
+                    }
+                  ]
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Diesel"
+              },
+              "mark": {
+                "colors": [
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 5
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 6
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 7
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 8
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 10
+                  }
+                ],
+                "layout": "group"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 1,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "58cc371e",
+            "multilineTextboxSpec": {
+              "lines": [
+                "<span style=\"text-align:center;display:block\"><span style=\"font-size:24px\">Comparação da variação percentual de cada combustível em cada região</span></span>"
+              ]
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 6,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "6cd9a2c9",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "edd4993c",
+                  "fields": [
+                    {
+                      "name": "monthly(date)",
+                      "expression": "DATE_TRUNC(\"MONTH\", `date`)"
+                    },
+                    {
+                      "name": "south_ethanol_pct_variation",
+                      "expression": "`south_ethanol_pct_variation`"
+                    },
+                    {
+                      "name": "southeast_ethanol_pct_variation",
+                      "expression": "`southeast_ethanol_pct_variation`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "fields": [
+                    {
+                      "fieldName": "south_ethanol_pct_variation",
+                      "displayName": "Sul"
+                    },
+                    {
+                      "fieldName": "southeast_ethanol_pct_variation",
+                      "displayName": "Sudeste"
+                    }
+                  ]
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Etanol"
+              },
+              "mark": {
+                "colors": [
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 5
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 6
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 7
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 8
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 10
+                  }
+                ],
+                "layout": "group"
+              }
+            }
+          },
+          "position": {
+            "x": 1,
+            "y": 7,
+            "width": 4,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "750f4b46",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "edd4993c",
+                  "fields": [
+                    {
+                      "name": "monthly(date)",
+                      "expression": "DATE_TRUNC(\"MONTH\", `date`)"
+                    },
+                    {
+                      "name": "south_gas_pct_variation",
+                      "expression": "`south_gas_pct_variation`"
+                    },
+                    {
+                      "name": "southeast_gas_pct_variation",
+                      "expression": "`southeast_gas_pct_variation`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "fields": [
+                    {
+                      "fieldName": "south_gas_pct_variation",
+                      "displayName": "Sul"
+                    },
+                    {
+                      "fieldName": "southeast_gas_pct_variation",
+                      "displayName": "Sudeste"
+                    }
+                  ]
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Gasolina"
+              },
+              "mark": {
+                "colors": [
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 5
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 6
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 7
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 8
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 10
+                  }
+                ],
+                "layout": "group"
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 1,
+            "width": 3,
+            "height": 6
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
+      "name": "4716f112",
+      "displayName": "Preço Médio Sul",
+      "layout": [
+        {
+          "widget": {
+            "name": "0d2928bc",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "ebce3331",
+                  "fields": [
+                    {
+                      "name": "monthly(date)",
+                      "expression": "DATE_TRUNC(\"MONTH\", `date`)"
+                    },
+                    {
+                      "name": "PR_diesel_avg_price",
+                      "expression": "`PR_diesel_avg_price`"
+                    },
+                    {
+                      "name": "RS_diesel_avg_price",
+                      "expression": "`RS_diesel_avg_price`"
+                    },
+                    {
+                      "name": "SC_diesel_avg_price",
+                      "expression": "`SC_diesel_avg_price`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "fields": [
+                    {
+                      "fieldName": "PR_diesel_avg_price",
+                      "displayName": "Paraná"
+                    },
+                    {
+                      "fieldName": "RS_diesel_avg_price",
+                      "displayName": "Rio Grande do Sul"
+                    },
+                    {
+                      "fieldName": "SC_diesel_avg_price",
+                      "displayName": "Santa Catarina"
+                    }
+                  ]
+                },
+                "color": {
+                  "legend": {
+                    "hideTitle": true,
+                    "position": "top"
+                  }
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Diesel"
+              },
+              "mark": {
+                "colors": [
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "fontColor"
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 5
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 6
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 7
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 8
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 10
+                  }
+                ],
+                "layout": "group"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 1,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "ba7f927b",
+            "multilineTextboxSpec": {
+              "lines": [
+                "<span style=\"text-align:center;display:block\"><span style=\"font-size:24px\">Comparação do preço médio de cada combustível em cada estado da região Sul do Brasil</span></span>"
+              ]
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 6,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "b9abfa30",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "ebce3331",
+                  "fields": [
+                    {
+                      "name": "monthly(date)",
+                      "expression": "DATE_TRUNC(\"MONTH\", `date`)"
+                    },
+                    {
+                      "name": "PR_gas_avg_price",
+                      "expression": "`PR_gas_avg_price`"
+                    },
+                    {
+                      "name": "RS_gas_avg_price",
+                      "expression": "`RS_gas_avg_price`"
+                    },
+                    {
+                      "name": "SC_gas_avg_price",
+                      "expression": "`SC_gas_avg_price`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "fields": [
+                    {
+                      "fieldName": "PR_gas_avg_price",
+                      "displayName": "Paraná"
+                    },
+                    {
+                      "fieldName": "RS_gas_avg_price",
+                      "displayName": "Rio Grande do Sul"
+                    },
+                    {
+                      "fieldName": "SC_gas_avg_price",
+                      "displayName": "Santa Catarina"
+                    }
+                  ]
+                },
+                "color": {
+                  "legend": {
+                    "hideTitle": true,
+                    "position": "top"
+                  }
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Gasolina"
+              },
+              "mark": {
+                "colors": [
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "fontColor"
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 5
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 6
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 7
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 8
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 10
+                  }
+                ],
+                "layout": "group"
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 1,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "c80c5905",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "ebce3331",
+                  "fields": [
+                    {
+                      "name": "monthly(date)",
+                      "expression": "DATE_TRUNC(\"MONTH\", `date`)"
+                    },
+                    {
+                      "name": "PR_ethanol_avg_price",
+                      "expression": "`PR_ethanol_avg_price`"
+                    },
+                    {
+                      "name": "RS_ethanol_avg_price",
+                      "expression": "`RS_ethanol_avg_price`"
+                    },
+                    {
+                      "name": "SC_ethanol_avg_price",
+                      "expression": "`SC_ethanol_avg_price`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "fields": [
+                    {
+                      "fieldName": "PR_ethanol_avg_price",
+                      "displayName": "Paraná"
+                    },
+                    {
+                      "fieldName": "RS_ethanol_avg_price",
+                      "displayName": "Rio Grande do Sul"
+                    },
+                    {
+                      "fieldName": "SC_ethanol_avg_price",
+                      "displayName": "Santa Catarina"
+                    }
+                  ]
+                },
+                "color": {
+                  "legend": {
+                    "hideTitle": true,
+                    "position": "top"
+                  }
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Etanol"
+              },
+              "mark": {
+                "colors": [
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "fontColor"
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 5
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 6
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 7
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 8
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 10
+                  }
+                ],
+                "layout": "group"
+              }
+            }
+          },
+          "position": {
+            "x": 1,
+            "y": 7,
+            "width": 4,
+            "height": 6
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
+      "name": "3362ca48",
+      "displayName": "Preço Médio Sudeste",
+      "layout": [
+        {
+          "widget": {
+            "name": "8e0128b2",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "e8804a2a",
+                  "fields": [
+                    {
+                      "name": "monthly(date)",
+                      "expression": "DATE_TRUNC(\"MONTH\", `date`)"
+                    },
+                    {
+                      "name": "ES_diesel_avg_price",
+                      "expression": "`ES_diesel_avg_price`"
+                    },
+                    {
+                      "name": "MG_diesel_avg_price",
+                      "expression": "`MG_diesel_avg_price`"
+                    },
+                    {
+                      "name": "RJ_diesel_avg_price",
+                      "expression": "`RJ_diesel_avg_price`"
+                    },
+                    {
+                      "name": "SP_diesel_avg_price",
+                      "expression": "`SP_diesel_avg_price`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "fields": [
+                    {
+                      "fieldName": "ES_diesel_avg_price",
+                      "displayName": "Espirito Santo"
+                    },
+                    {
+                      "fieldName": "MG_diesel_avg_price",
+                      "displayName": "Minas Gerais"
+                    },
+                    {
+                      "fieldName": "RJ_diesel_avg_price",
+                      "displayName": "Rio de Janeiro"
+                    },
+                    {
+                      "fieldName": "SP_diesel_avg_price",
+                      "displayName": "São Paulo"
+                    }
+                  ]
+                },
+                "color": {
+                  "legend": {
+                    "position": "top"
+                  }
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Diesel"
+              },
+              "mark": {
+                "colors": [
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 1
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 5
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 6
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 7
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 8
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 10
+                  }
+                ],
+                "layout": "group"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 1,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "46299ea7",
+            "multilineTextboxSpec": {
+              "lines": [
+                "<span style=\"text-align:center;display:block\"><span style=\"font-size:24px\">Comparação do preço médio de cada combustível em cada estado da região Sudeste do Brasil</span></span>"
+              ]
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 6,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "075297d8",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "e8804a2a",
+                  "fields": [
+                    {
+                      "name": "monthly(date)",
+                      "expression": "DATE_TRUNC(\"MONTH\", `date`)"
+                    },
+                    {
+                      "name": "ES_gas_avg_price",
+                      "expression": "`ES_gas_avg_price`"
+                    },
+                    {
+                      "name": "MG_gas_avg_price",
+                      "expression": "`MG_gas_avg_price`"
+                    },
+                    {
+                      "name": "RJ_gas_avg_price",
+                      "expression": "`RJ_gas_avg_price`"
+                    },
+                    {
+                      "name": "SP_gas_avg_price",
+                      "expression": "`SP_gas_avg_price`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "fields": [
+                    {
+                      "fieldName": "ES_gas_avg_price",
+                      "displayName": "Espirito Santo"
+                    },
+                    {
+                      "fieldName": "MG_gas_avg_price",
+                      "displayName": "Minas Gerais"
+                    },
+                    {
+                      "fieldName": "RJ_gas_avg_price",
+                      "displayName": "Rio de Janeiro"
+                    },
+                    {
+                      "fieldName": "SP_gas_avg_price",
+                      "displayName": "São Paulo"
+                    }
+                  ]
+                },
+                "color": {
+                  "legend": {
+                    "position": "top"
+                  }
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Gasolina"
+              },
+              "mark": {
+                "colors": [
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 1
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 5
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 6
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 7
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 8
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 10
+                  }
+                ],
+                "layout": "group"
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 1,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "4a909351",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "e8804a2a",
+                  "fields": [
+                    {
+                      "name": "monthly(date)",
+                      "expression": "DATE_TRUNC(\"MONTH\", `date`)"
+                    },
+                    {
+                      "name": "ES_ethanol_avg_price",
+                      "expression": "`ES_ethanol_avg_price`"
+                    },
+                    {
+                      "name": "MG_ethanol_avg_price",
+                      "expression": "`MG_ethanol_avg_price`"
+                    },
+                    {
+                      "name": "RJ_ethanol_avg_price",
+                      "expression": "`RJ_ethanol_avg_price`"
+                    },
+                    {
+                      "name": "SP_ethanol_avg_price",
+                      "expression": "`SP_ethanol_avg_price`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "fields": [
+                    {
+                      "fieldName": "ES_ethanol_avg_price",
+                      "displayName": "Espirito Santo"
+                    },
+                    {
+                      "fieldName": "MG_ethanol_avg_price",
+                      "displayName": "Minas Gerais"
+                    },
+                    {
+                      "fieldName": "RJ_ethanol_avg_price",
+                      "displayName": "Rio de Janeiro"
+                    },
+                    {
+                      "fieldName": "SP_ethanol_avg_price",
+                      "displayName": "São Paulo"
+                    }
+                  ]
+                },
+                "color": {
+                  "legend": {
+                    "position": "top"
+                  }
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Gasolina"
+              },
+              "mark": {
+                "colors": [
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 1
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 5
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 6
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 7
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 8
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 10
+                  }
+                ],
+                "layout": "group"
+              }
+            }
+          },
+          "position": {
+            "x": 1,
+            "y": 7,
+            "width": 4,
+            "height": 6
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
+      "name": "51c6efc2",
+      "displayName": "Variação Percentual Sul",
+      "layout": [
+        {
+          "widget": {
+            "name": "b8e1ce9f",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "ebce3331",
+                  "fields": [
+                    {
+                      "name": "monthly(date)",
+                      "expression": "DATE_TRUNC(\"MONTH\", `date`)"
+                    },
+                    {
+                      "name": "PR_diesel_pct_variation",
+                      "expression": "`PR_diesel_pct_variation`"
+                    },
+                    {
+                      "name": "RS_diesel_pct_variation",
+                      "expression": "`RS_diesel_pct_variation`"
+                    },
+                    {
+                      "name": "SC_diesel_pct_variation",
+                      "expression": "`SC_diesel_pct_variation`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "fields": [
+                    {
+                      "fieldName": "PR_diesel_pct_variation",
+                      "displayName": "Paraná"
+                    },
+                    {
+                      "fieldName": "RS_diesel_pct_variation",
+                      "displayName": "Rio Grande do Sul"
+                    },
+                    {
+                      "fieldName": "SC_diesel_pct_variation",
+                      "displayName": "Santa Catarina"
+                    }
+                  ]
+                },
+                "color": {
+                  "legend": {
+                    "hideTitle": true,
+                    "position": "top"
+                  }
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Diesel"
+              },
+              "mark": {
+                "colors": [
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "fontColor"
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 5
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 6
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 7
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 8
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 10
+                  }
+                ],
+                "layout": "group"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 1,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "dbd40fb1",
+            "multilineTextboxSpec": {
+              "lines": [
+                "<span style=\"text-align:center;display:block\"><span style=\"font-size:24px\">Comparação da variação percentual de cada combustível em cada estado da região Sul do Brasil</span></span>"
+              ]
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 6,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "5bbe563f",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "ebce3331",
+                  "fields": [
+                    {
+                      "name": "monthly(date)",
+                      "expression": "DATE_TRUNC(\"MONTH\", `date`)"
+                    },
+                    {
+                      "name": "PR_gas_pct_variation",
+                      "expression": "`PR_gas_pct_variation`"
+                    },
+                    {
+                      "name": "RS_gas_pct_variation",
+                      "expression": "`RS_gas_pct_variation`"
+                    },
+                    {
+                      "name": "SC_gas_pct_variation",
+                      "expression": "`SC_gas_pct_variation`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "fields": [
+                    {
+                      "fieldName": "PR_gas_pct_variation",
+                      "displayName": "Paraná"
+                    },
+                    {
+                      "fieldName": "RS_gas_pct_variation",
+                      "displayName": "Rio Grande do Sul"
+                    },
+                    {
+                      "fieldName": "SC_gas_pct_variation",
+                      "displayName": "Santa Catarina"
+                    }
+                  ]
+                },
+                "color": {
+                  "legend": {
+                    "hideTitle": true,
+                    "position": "top"
+                  }
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Gasolina"
+              },
+              "mark": {
+                "colors": [
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "fontColor"
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 5
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 6
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 7
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 8
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 10
+                  }
+                ],
+                "layout": "group"
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 1,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "c31f147b",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "ebce3331",
+                  "fields": [
+                    {
+                      "name": "monthly(date)",
+                      "expression": "DATE_TRUNC(\"MONTH\", `date`)"
+                    },
+                    {
+                      "name": "PR_ethanol_pct_variation",
+                      "expression": "`PR_ethanol_pct_variation`"
+                    },
+                    {
+                      "name": "RS_ethanol_pct_variation",
+                      "expression": "`RS_ethanol_pct_variation`"
+                    },
+                    {
+                      "name": "SC_ethanol_pct_variation",
+                      "expression": "`SC_ethanol_pct_variation`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "fields": [
+                    {
+                      "fieldName": "PR_ethanol_pct_variation",
+                      "displayName": "Paraná"
+                    },
+                    {
+                      "fieldName": "RS_ethanol_pct_variation",
+                      "displayName": "Rio Grande do Sul"
+                    },
+                    {
+                      "fieldName": "SC_ethanol_pct_variation",
+                      "displayName": "Santa Catarina"
+                    }
+                  ]
+                },
+                "color": {
+                  "legend": {
+                    "hideTitle": true,
+                    "position": "top"
+                  }
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Etanol"
+              },
+              "mark": {
+                "colors": [
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "fontColor"
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 5
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 6
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 7
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 8
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 10
+                  }
+                ],
+                "layout": "group"
+              }
+            }
+          },
+          "position": {
+            "x": 1,
+            "y": 7,
+            "width": 4,
+            "height": 6
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
+      "name": "b8b3e987",
+      "displayName": "Variação Percentual Sudeste",
+      "layout": [
+        {
+          "widget": {
+            "name": "70c26f41",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "e8804a2a",
+                  "fields": [
+                    {
+                      "name": "monthly(date)",
+                      "expression": "DATE_TRUNC(\"MONTH\", `date`)"
+                    },
+                    {
+                      "name": "ES_diesel_pct_variation",
+                      "expression": "`ES_diesel_pct_variation`"
+                    },
+                    {
+                      "name": "MG_diesel_pct_variation",
+                      "expression": "`MG_diesel_pct_variation`"
+                    },
+                    {
+                      "name": "RJ_diesel_pct_variation",
+                      "expression": "`RJ_diesel_pct_variation`"
+                    },
+                    {
+                      "name": "SP_diesel_pct_variation",
+                      "expression": "`SP_diesel_pct_variation`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "fields": [
+                    {
+                      "fieldName": "ES_diesel_pct_variation",
+                      "displayName": "Espirito Santo"
+                    },
+                    {
+                      "fieldName": "MG_diesel_pct_variation",
+                      "displayName": "Minas Gerais"
+                    },
+                    {
+                      "fieldName": "RJ_diesel_pct_variation",
+                      "displayName": "Rio de Janeiro"
+                    },
+                    {
+                      "fieldName": "SP_diesel_pct_variation",
+                      "displayName": "São Paulo"
+                    }
+                  ]
+                },
+                "color": {
+                  "legend": {
+                    "position": "top"
+                  }
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Diesel"
+              },
+              "mark": {
+                "colors": [
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 1
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 5
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 6
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 7
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 8
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 10
+                  }
+                ],
+                "layout": "group"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 1,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "f8be7a47",
+            "multilineTextboxSpec": {
+              "lines": [
+                "<span style=\"text-align:center;display:block\"><span style=\"font-size:24px\">Comparação da variação percentual de cada combustível em cada estado da região Sudeste do Brasil</span></span>"
+              ]
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 6,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "1001a86f",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "e8804a2a",
+                  "fields": [
+                    {
+                      "name": "monthly(date)",
+                      "expression": "DATE_TRUNC(\"MONTH\", `date`)"
+                    },
+                    {
+                      "name": "ES_gas_pct_variation",
+                      "expression": "`ES_gas_pct_variation`"
+                    },
+                    {
+                      "name": "MG_gas_pct_variation",
+                      "expression": "`MG_gas_pct_variation`"
+                    },
+                    {
+                      "name": "RJ_gas_pct_variation",
+                      "expression": "`RJ_gas_pct_variation`"
+                    },
+                    {
+                      "name": "SP_gas_pct_variation",
+                      "expression": "`SP_gas_pct_variation`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "fields": [
+                    {
+                      "fieldName": "ES_gas_pct_variation",
+                      "displayName": "Espirito Santo"
+                    },
+                    {
+                      "fieldName": "MG_gas_pct_variation",
+                      "displayName": "Minas Gerais"
+                    },
+                    {
+                      "fieldName": "RJ_gas_pct_variation",
+                      "displayName": "Rio de Janeiro"
+                    },
+                    {
+                      "fieldName": "SP_gas_pct_variation",
+                      "displayName": "São Paulo"
+                    }
+                  ]
+                },
+                "color": {
+                  "legend": {
+                    "position": "top"
+                  }
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Gasolina"
+              },
+              "mark": {
+                "colors": [
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 1
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 5
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 6
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 7
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 8
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 10
+                  }
+                ],
+                "layout": "group"
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 1,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "baa418c6",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "e8804a2a",
+                  "fields": [
+                    {
+                      "name": "monthly(date)",
+                      "expression": "DATE_TRUNC(\"MONTH\", `date`)"
+                    },
+                    {
+                      "name": "ES_ethanol_pct_variation",
+                      "expression": "`ES_ethanol_pct_variation`"
+                    },
+                    {
+                      "name": "MG_ethanol_pct_variation",
+                      "expression": "`MG_ethanol_pct_variation`"
+                    },
+                    {
+                      "name": "RJ_ethanol_pct_variation",
+                      "expression": "`RJ_ethanol_pct_variation`"
+                    },
+                    {
+                      "name": "SP_ethanol_pct_variation",
+                      "expression": "`SP_ethanol_pct_variation`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "monthly(date)",
+                  "axis": {
+                    "hideTitle": true
+                  },
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "fields": [
+                    {
+                      "fieldName": "ES_ethanol_pct_variation",
+                      "displayName": "Espirito Santo"
+                    },
+                    {
+                      "fieldName": "MG_ethanol_pct_variation",
+                      "displayName": "Minas Gerais"
+                    },
+                    {
+                      "fieldName": "RJ_ethanol_pct_variation",
+                      "displayName": "Rio de Janeiro"
+                    },
+                    {
+                      "fieldName": "SP_ethanol_pct_variation",
+                      "displayName": "São Paulo"
+                    }
+                  ]
+                },
+                "color": {
+                  "legend": {
+                    "position": "top"
+                  }
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Gasolina"
+              },
+              "mark": {
+                "colors": [
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 1
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 5
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 6
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 7
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 8
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 10
+                  }
+                ],
+                "layout": "group"
+              }
+            }
+          },
+          "position": {
+            "x": 1,
+            "y": 7,
+            "width": 4,
+            "height": 6
           }
         }
       ],

@@ -56,12 +56,12 @@ Etanol:
 	- Pico: 03/2022 - O Etanol variou 15% a menos que o Petróleo.
 	- Vale: 03/2021 - O Etanol variou 12% a mais que o Petróleo.
 
-![Diferenças de Variação Petróleo x Combustível.png](./Diferenças de Variação Petróleo x Combustível.png "Diferenças de Variação Petróleo x Combustível.png")
+![Diferenças de Variação Petróleo x Combustível.png](https://github.com/trjuj/MVP---Engenharia-de-Dados/blob/main/Graficos/Diferenças%20de%20Variação%20Petróleo%20x%20Combustível.png)
 
 3. Maior: +20% em 03/2022
    Menor: -11% em 07/2022 e 12/2022
 
-![Variação Percentual do Petróleo.png](./Variação Percentual do Petróleo.png "Variação Percentual do Petróleo.png")
+![Variação Percentual do Petróleo.png](https://github.com/trjuj/MVP---Engenharia-de-Dados/blob/main/Graficos/Variação%20Percentual%20do%20Petróleo.png)
 
 4. Diesel:
 	- Maior: +14% em 08/2023
@@ -75,7 +75,7 @@ Etanol:
 	- Maior: +18% em 03/2021
 	- Menor: -16% em 09/2022
 
-![Variação Percentual de cada produto.png](./Variação Percentual de cada produto.png "Variação Percentual de cada produto.png")
+![Variação Percentual de cada produto.png](https://github.com/trjuj/MVP---Engenharia-de-Dados/blob/main/Graficos/Variação%20Percentual%20de%20cada%20produto.png)
 
 5. Resposta coberta pela análise realizada na pergunta 2.
 
@@ -105,7 +105,7 @@ Nenhum dos valores de correlação é negativo, o que faz sentido, já que é mu
 
 A maior correlação observada é entre diesel e petróleo, com a menor sendo com o etanol, o que faz sentido considerando que petróleo não é a matéria-prima do etanol.
 
-![Correlação Individual Petróleo x Combustível.png](./Correlação Individual Petróleo x Combustível.png "Correlação Individual Petróleo x Combustível.png")
+![Correlação Individual Petróleo x Combustível.png](https://github.com/trjuj/MVP---Engenharia-de-Dados/blob/main/Graficos/Correlação%20Individual%20Petróleo%20x%20Combustível.png)
 
 7. Como mencionado na resposta da pergunta 6, a correlação com etanol foi a menor entre as calculadas, o que faz sentido dada sua origem vegetal, porém, podemos perceber que os valores ainda são consideravelmente maiores do que 0, o que indica alguma correlação, mas não necessariamente direta. É comum que postos de combustível tenham reajustes aplicados a todos os combustíveis de uma vez, então é plausível considerar que a correlação entre combustíveis seja mais alta, já que estes devem ser afetados pelos mesmos fatores, incluindo o preço do petróleo, é possível observar isso já que cálculo da correlação entre a gasolina e o etanol resultou no maior valor observado, mas também deve-se levar em conta que a correlação entre diesel e etanol resultou em um valor negativo (mesmo sendo com defasagem de 2 meses), pode ser impacto da granularidade novamente, mas podemos concluir que é provável que estes produtos sofram influência de diferentes fatores.
 
@@ -120,16 +120,16 @@ No período de 12/2022 até 03/2021, o estado de Santa Catarina apresentou uma v
 Isso pode indicar algum evento localizado especificamente no estado de Santa Catarina, já que os demais não aparentam ter sido afetados.
 Santa Catarina foi utilizado como exemplo, mas graficamente podemos perceber eventos semelhantes com os demais estados e nos demais combustíveis.
 
-![Comparação da variação percentual região Sul.png](./Comparação da variação percentual região Sul.png "Comparação da variação percentual região Sul.png")
+![Comparação da variação percentual região Sul.png](https://github.com/trjuj/MVP---Engenharia-de-Dados/blob/main/Graficos/Comparação%20da%20variação%20percentual%20região%20Sul.png)
 
 Passando para a região Sudeste, podemos observar um cenário semelhante, onde a tendência dos preços é ao menos similar nos estados, mas a frequência de eventos que causam uma variação diferencial em um estado em específico é visualmente maior, novamente com a gasolina, é possível perceber diversos picos e vales na variação do preço do estado de Minas Gerais, desde 10/2020 até 10/2022, durante estes dois anos o estado se destaca tendo uma variação anormal no preço da gasolina. Mas nos dois anos seguintes, esta variação continua, mas no estado de São Paulo, entre 12/2022 e 12/2024, o estado notavelmente se destaca no gráfico diversas vezes, seja com crescimentos ou quedas no preço.
 
-![Comparação da variação percentual região Sudeste.png](./Comparação da variação percentual região Sudeste.png "Comparação da variação percentual região Sudeste.png")
+![Comparação da variação percentual região Sudeste.png](https://github.com/trjuj/MVP---Engenharia-de-Dados/blob/main/Graficos/Comparação%20da%20variação%20percentual%20região%20Sudeste.png)
 
 10. Novamente os dados aqui analisados se limitam às regiões Sul e Sudeste, mantendo o escopo da última questão.
 Diferentemente da análise individual de cada estado, quando regiões inteiras são observadas simultaneamente, não é tão fácil de notar diferenças tão significativas quanto as mencionadas anteriormente, o que encaixa com a realidade, já que os estados, mesmo estando sob o governo nacional, ainda possuem um governo próprio, que pode agregar fatores únicos, enquanto regiões inteiras, são apenas separadas geograficamente e mesmo que seus estados apresentem anomalias, observando preços médios, os demais estados podem amortecer esta divergência, a tornando mais sutil e disfarçada.
 
-![Comparação da variação percentual por região.png](./Comparação da variação percentual por região.png "Comparação da variação percentual por região.png")
+![Comparação da variação percentual por região.png](https://github.com/trjuj/MVP---Engenharia-de-Dados/blob/main/Graficos/Comparação%20da%20variação%20percentual%20por%20região.png)
 
 11. Para manter o escopo estabelecido, os períodos pesquisados foram os que apresentaram divergências na questão 9.
 Sobre a região Sul, mais especificamente sobre o estado de Santa Catarina, é possível encontrar relatos e notícias sobre desastres naturais neste período, mais especificamente enchentes e deslizamentos, eventos estes que foram noticiados globalmente (https://watchers.news/2022/12/21/severe-floods-and-landslides-hit-santa-catarina-brazil/?utm_source=chatgpt.com), considerando que eventos como estes podem facilmente afetar a distribuição de combustível é fácil relaciona-los as variações ocorridas, mas é válido considerar que os ocorridos sejam os únicos fatores responsáveis pelas drásticas mudanças observadas.

@@ -40,7 +40,7 @@ O Objetivo principal deste MVP, é uma análise da evolução mensal do preço i
 
 1. Analisando lado a lado os gráficos de preço médio mensal do petróleo e de cada um dos combustíveis, percebe-se que a variação dos combustíveis realmente acompanha o preço do petróleo, cada um tendo suas particularidades, como uma variação um pouco maior ou menor, mas é possível afirmar que os preços se acompanham sim.
 
-![Preços Médios.png](./Preços Médios.png "Preços Médios.png")
+![Preços Médios.png]([./Preços Médios.png "Preços Médios.png"](https://github.com/trjuj/MVP---Engenharia-de-Dados/blob/main/Graficos/Preços%20Médios.png))
 
 2. Por mais que os produtos apresentem uma semelhança no comportamento de seus preços, podemos perceber um comportamento mais individual na variação percentual de cada um, apresentando picos e vales em momentos divergentes, o que leva a crer que há sim uma influência do petróleo, mas este não é o único fator que controla a variação. Levando em conta as métricas de diferença entre as variações percentuais do petróleo e de cada combustível, podemos perceber a maior diferença para cada produto nos seguintes meses:
 
